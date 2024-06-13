@@ -1,0 +1,108 @@
+[
+    {
+        "rid": 237,
+        "tags": [
+            {
+                "tag_id": 683752,
+                "tag_name": "球鞋",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 1762404,
+                "tag_name": "球鞋测评",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 449655,
+                "tag_name": "球衣",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 560952,
+                "tag_name": "球星卡",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 565481,
+                "tag_name": "篮球鞋",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 110511,
+                "tag_name": "开箱",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 627389,
+                "tag_name": "跑鞋",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 2649620,
+                "tag_name": "运动装备",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 3525999,
+                "tag_name": "体育产业",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 2523927,
+                "tag_name": "sneaker",
+                "highlight": 0,
+                "is_atten": 0
+            }
+        ]
+    },
+    {
+        "rid": 213,
+        "tags": [
+            {
+                "tag_id": 19703,
+                "tag_name": "零食",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 587892,
+                "tag_name": "饮品",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 51679,
+                "tag_name": "外卖",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 338712,
+                "tag_name": "速食",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 6348,
+                "tag_name": "水果",
+                "highlight": 0,
+                "is_atten": 0
+            },
+            {
+                "tag_id": 419470,
+                "tag_name": "厨具",
+                "highlight": 0,
+                "is_atten": 0
+            }
+        ]
+    }
+]

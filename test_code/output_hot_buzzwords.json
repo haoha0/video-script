@@ -1,0 +1,267 @@
+{
+    "type": {
+        "id": 4,
+        "name": "哔哩哔哩热词图鉴",
+        "name_pinyin": {
+            "哔": "bì",
+            "哩": "lī",
+            "图": "tú",
+            "热": "rè",
+            "词": "cí",
+            "鉴": "jiàn"
+        },
+        "level": 0
+    },
+    "buzzwords": [
+        {
+            "id": 178,
+            "name": "为菈妮",
+            "name_pinyin": {
+                "为": "wèi",
+                "妮": "nī",
+                "菈": "lā"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/5da4fc6dc0db8437776be99766823125c7c09218.png"
+        },
+        {
+            "id": 175,
+            "name": "小鸡恰恰舞",
+            "name_pinyin": {
+                "小": "xiǎo",
+                "恰": "qià",
+                "舞": "wǔ",
+                "鸡": "jī"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/6a7282d0794682467d7366756e88e6300add9e0e.png"
+        },
+        {
+            "id": 174,
+            "name": "你没事吧",
+            "name_pinyin": {
+                "事": "shì",
+                "你": "nǐ",
+                "吧": "ba",
+                "没": "méi"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/b1a6bfb9e7c8d3463f0c3372fc7cb572f4c3d8a7.png"
+        },
+        {
+            "id": 173,
+            "name": "这是可以说的么",
+            "name_pinyin": {
+                "么": "me",
+                "以": "yǐ",
+                "可": "kě",
+                "是": "shì",
+                "的": "de",
+                "说": "shuō",
+                "这": "zhè"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/2dd607705fa48f8a51be94d6e05b3502382420fe.png"
+        },
+        {
+            "id": 172,
+            "name": "这一脚踢出了整个盛夏",
+            "name_pinyin": {
+                "一": "yī",
+                "个": "gè",
+                "了": "le",
+                "出": "chū",
+                "夏": "xià",
+                "整": "zhěng",
+                "盛": "shèng",
+                "脚": "jiǎo",
+                "踢": "tī",
+                "这": "zhè"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/cc1fe7678103941c0b346329a507c55633ef1011.png"
+        },
+        {
+            "id": 170,
+            "name": "芜湖起飞",
+            "name_pinyin": {
+                "湖": "hú",
+                "芜": "wú",
+                "起": "qǐ",
+                "飞": "fēi"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/c68973fb986965a75b9a7ea8b5b42e0f51d684fa.png"
+        },
+        {
+            "id": 171,
+            "name": "金坷垃",
+            "name_pinyin": {
+                "坷": "kě",
+                "垃": "lā",
+                "金": "jīn"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/be8e9297ea8497ae60a2ca7bd9be972c9be5a090.png"
+        },
+        {
+            "id": 169,
+            "name": "月入3200",
+            "name_pinyin": {
+                "0": "",
+                "2": "",
+                "3": "",
+                "入": "rù",
+                "月": "yuè"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/8929c5196670ffb93f06eadc7cba1f38a8966eab.png"
+        },
+        {
+            "id": 163,
+            "name": "san值",
+            "name_pinyin": {
+                "a": "",
+                "n": "",
+                "s": "",
+                "值": "zhí"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/ee0a256c94d9a98c9aa8ae885b389cd901469921.png"
+        },
+        {
+            "id": 165,
+            "name": "干净又卫生",
+            "name_pinyin": {
+                "净": "jìng",
+                "卫": "wèi",
+                "又": "yòu",
+                "干": "gàn",
+                "生": "shēng"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/b6b27b8e0b16d47eb359d5f87c61caadd0126cd7.png"
+        },
+        {
+            "id": 167,
+            "name": "野性消费",
+            "name_pinyin": {
+                "性": "xìng",
+                "消": "xiāo",
+                "费": "fèi",
+                "野": "yě"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/555bcc294962c41f21c856e2925a6d4de88b1e2d.png"
+        },
+        {
+            "id": 166,
+            "name": "穿山甲",
+            "name_pinyin": {
+                "山": "shān",
+                "甲": "jiǎ",
+                "穿": "chuān"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/184a034a8fc24ce1ce8f42f065bc1f1f9996605e.png"
+        },
+        {
+            "id": 161,
+            "name": "发生什么事了",
+            "name_pinyin": {
+                "么": "me",
+                "了": "le",
+                "事": "shì",
+                "什": "shén",
+                "发": "fā",
+                "生": "shēng"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/6871521185b608efddcd2c1ee00e3cd86e5d9c6d.png"
+        },
+        {
+            "id": 168,
+            "name": "奥斯卡搏击之夜",
+            "name_pinyin": {
+                "之": "zhī",
+                "击": "jī",
+                "卡": "kǎ",
+                "夜": "yè",
+                "奥": "ào",
+                "搏": "bó",
+                "斯": "sī"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/56cc2f4b07b413dd12d58c40b16b3b9161adc4d0.png"
+        },
+        {
+            "id": 74,
+            "name": "小文哥吃吃吃",
+            "name_pinyin": {
+                "吃": "chī",
+                "哥": "gē",
+                "小": "xiǎo",
+                "文": "wén"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/859e0f1338f3496ad380ba3879645a1ba24629bb.jpg"
+        },
+        {
+            "id": 162,
+            "name": "接头霸王",
+            "name_pinyin": {
+                "头": "tóu",
+                "接": "jiē",
+                "王": "wáng",
+                "霸": "bà"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/c9f64ea2227473d08afe7f988b52443c8d65677a.png"
+        },
+        {
+            "id": 164,
+            "name": "教练我想打篮球",
+            "name_pinyin": {
+                "想": "xiǎng",
+                "我": "wǒ",
+                "打": "dǎ",
+                "教": "jiào",
+                "球": "qiú",
+                "篮": "lán",
+                "练": "liàn"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/fbd04927861b826813deddc40fe2886ab37b9c5b.png"
+        },
+        {
+            "id": 41,
+            "name": "rick roll",
+            "name_pinyin": {
+                " ": "",
+                "c": "",
+                "i": "",
+                "k": "",
+                "l": "",
+                "o": "",
+                "r": ""
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/1cfa56454b79b283b3a331d31706e16012751091.png"
+        },
+        {
+            "id": 158,
+            "name": "汪汪队立大功",
+            "name_pinyin": {
+                "功": "gōng",
+                "大": "dà",
+                "汪": "wāng",
+                "立": "lì",
+                "队": "duì"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/f07974558fa05872eb9d591b6204fd89c98349b1.jpg"
+        },
+        {
+            "id": 146,
+            "name": "金钱豹",
+            "name_pinyin": {
+                "豹": "bào",
+                "金": "jīn",
+                "钱": "qián"
+            },
+            "picture": "https://i0.hdslb.com/bfs/archive/3d492f4c01da7d15073d3175871e14ed56f0f78a.png"
+        }
+    ],
+    "page": {
+        "num": 1,
+        "size": 20,
+        "total": 175,
+        "cnt": 0,
+        "ps": 0,
+        "pe": 0,
+        "seg_start_mills": 0,
+        "seg_end_mills": 0,
+        "segment_rules": null
+    }
+}

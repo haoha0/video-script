@@ -1,0 +1,103 @@
+[
+    [
+        {
+            "name": "运动",
+            "channelId": 14,
+            "tid": 234,
+            "url": "//www.bilibili.com/v/sports",
+            "icon": "ChannelSports",
+            "sub": [
+                {
+                    "subChannelId": 140001,
+                    "name": "篮球",
+                    "route": "basketball",
+                    "tid": 235,
+                    "url": "//www.bilibili.com/v/sports/basketball"
+                },
+                {
+                    "subChannelId": 140006,
+                    "name": "足球",
+                    "route": "football",
+                    "tid": 249,
+                    "url": "//www.bilibili.com/v/sports/football"
+                },
+                {
+                    "subChannelId": 140002,
+                    "name": "健身",
+                    "route": "aerobics",
+                    "tid": 164,
+                    "url": "//www.bilibili.com/v/sports/aerobics"
+                },
+                {
+                    "subChannelId": 140003,
+                    "name": "竞技体育",
+                    "route": "athletic",
+                    "tid": 236,
+                    "url": "//www.bilibili.com/v/sports/athletic"
+                },
+                {
+                    "subChannelId": 140004,
+                    "name": "运动文化",
+                    "route": "culture",
+                    "tid": 237,
+                    "url": "//www.bilibili.com/v/sports/culture"
+                },
+                {
+                    "subChannelId": 140005,
+                    "name": "运动综合",
+                    "route": "comprehensive",
+                    "tid": 238,
+                    "url": "//www.bilibili.com/v/sports/comprehensive"
+                }
+            ]
+        },
+        null
+    ],
+    [
+        {
+            "name": "美食",
+            "channelId": 17,
+            "tid": 211,
+            "url": "//www.bilibili.com/v/food",
+            "icon": "ChannelFood",
+            "sub": [
+                {
+                    "subChannelId": 170001,
+                    "name": "美食制作",
+                    "route": "make",
+                    "tid": 76,
+                    "url": "//www.bilibili.com/v/food/make"
+                },
+                {
+                    "subChannelId": 170002,
+                    "name": "美食侦探",
+                    "route": "detective",
+                    "tid": 212,
+                    "url": "//www.bilibili.com/v/food/detective"
+                },
+                {
+                    "subChannelId": 170003,
+                    "name": "美食测评",
+                    "route": "measurement",
+                    "tid": 213,
+                    "url": "//www.bilibili.com/v/food/measurement"
+                },
+                {
+                    "subChannelId": 170004,
+                    "name": "田园美食",
+                    "route": "rural",
+                    "tid": 214,
+                    "url": "//www.bilibili.com/v/food/rural"
+                },
+                {
+                    "subChannelId": 170005,
+                    "name": "美食记录",
+                    "route": "record",
+                    "tid": 215,
+                    "url": "//www.bilibili.com/v/food/record"
+                }
+            ]
+        },
+        null
+    ]
+]
