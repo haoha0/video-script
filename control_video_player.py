@@ -18,7 +18,8 @@ def load_and_play_video(driver, url, wait):
     load_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "body > div.container > div:nth-child(2) > div.input-group > span > button.btn.btn-primary")))
     load_button.click()
     print("Load button clicked.")
-    time.sleep(1) # TODO 这里需要考虑修改等待逻辑
+    # time.sleep(1) # TODO 这里需要考虑修改等待逻辑
+    time.sleep(2) # for windows
 
     play_button = wait.until(EC.element_to_be_clickable((By.ID, "iconPlayPause")))
     play_button.click()
@@ -52,12 +53,18 @@ options = webdriver.EdgeOptions()
 # options.use_chromium = True
 options.set_capability('ms:loggingPrefs', {'browser': 'ALL'})
 options.add_experimental_option("detach", True)
+options.add_argument('--ignore-certificate-errors') # for windows error
+options.add_experimental_option('excludeSwitches', ['enable-logging']) # for windows error
 driver = webdriver.Edge(options=options)
 # TODO:使用指定路径的driver
 # driver_path = '/Users/liuwenhao/Downloads/edgedriver_mac64_m1/msedgedriver'
 # driver = webdriver.Edge(service=webdriver.EdgeService(driver_path), options=options)
 
 driver.get('http://localhost:3000/samples/dash-if-reference-player/index.html')
+
+# for windows 消除个性化推荐弹窗
+time.sleep(10)
+driver.refresh()
 
 # 视频URL列表
 video_urls = [
