@@ -16,7 +16,7 @@ new_folder_name = "filtered_logs"
 new_filename = f"{filename.split('.')[0]}_filtered.txt"
 new_filepath = os.path.join(new_folder_name, new_filename)
 # target_labels = ['[PlaybackController]', '[video]', '[haohao]', '[MediaPlayer]']    # TODO
-target_labels = ['[PlaybackController]', '[BufferController][video]', '[haohao]', '[MediaPlayer]']
+target_labels = ['[PlaybackController]', '[BufferController][video]', '[ThroughputModel]','[haohao]', '[MediaPlayer]']
 
 # 编译正则表达式，用于匹配第一个双引号及其后的内容
 pattern = re.compile(r'"(.*?)"')
@@ -31,6 +31,7 @@ try:
         manual_found = False  # 标记是否找到第一个包含 "Manual" 的行
         for line in file:
             if "Manual" in line and not manual_found:
+            # if "Auto" in line and not manual_found:
                 manual_found = True
             
             if manual_found:

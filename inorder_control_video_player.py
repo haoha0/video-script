@@ -17,11 +17,20 @@ def load_and_play_video(driver, url, wait):
     # 点击加载并播放视频
     load_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "body > div.container > div:nth-child(2) > div.input-group > span > button.btn.btn-primary")))
     load_button.click()
+    print("Load button clicked.")
+
+    # 手动播放
+    # time.sleep(1) # TODO 这里需要考虑修改等待逻辑
+    time.sleep(1) # for windows
+    # haohao 7.11 测试发现不加timesleep也是可以正常触发播放？还是加1s比较稳定
+    play_button = wait.until(EC.element_to_be_clickable((By.ID, "iconPlayPause")))
+    play_button.click()
+    print("Play button clicked.")
 
     # 播放时间，设置为5min
-    playtime = 5 * 60
+    playtime = 8 * 60
     print("Load button clicked and play video for {} min.".format(playtime / 60))
-    time.sleep(20)
+    time.sleep(playtime)
 
 def save_logs_to_file(driver, folder_name="original_logs", filename="browser_logs.txt"):
     """获取浏览器日志并保存到文件。"""
@@ -52,8 +61,8 @@ driver = webdriver.Edge(options=options)
 driver.get('http://localhost:3000/samples/dash-if-reference-player/index.html')
 
 # for windows 消除个性化推荐弹窗
-time.sleep(10)
-driver.refresh()
+# time.sleep(10)
+# driver.refresh()
 
 # 视频URL列表
 video_urls = [
@@ -71,9 +80,11 @@ video_urls = [
 
 # test
 video_urls = [
-    'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd',
-    'https://dash.akamaized.net/digitalprimates/fraunhofer/480p_video/heaac_2_0_with_video/Sintel/sintel_480p_heaac2_0.mpd',
-    'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd'
+    # 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd',
+    # 'https://dash.akamaized.net/digitalprimates/fraunhofer/480p_video/heaac_2_0_with_video/Sintel/sintel_480p_heaac2_0.mpd',
+    # 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd',
+    # 'http://39.102.209.114/BV1P44y1F72Z.mpd'
+    'http://182.92.189.72/BV1P44y1F72Z.mpd'
 ]
 
 wait = WebDriverWait(driver, 10)
@@ -85,7 +96,7 @@ try:
         # time.sleep(2)  # 如果需要在视频间有特定的间隔
 
     folder_name = "original_logs"
-    filename = "log_" + time.strftime("%Y%m%d-%H%M") + f".txt"
+    filename = "log_" + time.strftime("%Y%m%d-%H%M") + f"_1mbit.txt"
     save_logs_to_file(driver, folder_name, filename)
 
 except Exception as e:
