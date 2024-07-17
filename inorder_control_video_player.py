@@ -96,7 +96,7 @@ try:
         # time.sleep(2)  # 如果需要在视频间有特定的间隔
 
     folder_name = "original_logs"
-    filename = "log_" + time.strftime("%Y%m%d-%H%M") + f"_1mbit.txt"
+    filename = "log_" + time.strftime("%Y%m%d-%H%M") + f"_4mbit.txt"
     save_logs_to_file(driver, folder_name, filename)
 
 except Exception as e:
