@@ -4,3 +4,5 @@ videos_output/
 original_logs/
 filtered_logs/
 features/
+*_original_logs/
+*_pcaps/
