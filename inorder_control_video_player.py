@@ -21,15 +21,12 @@ def load_and_play_video(driver, url, playtime, wait):
     print("Load button clicked.")
 
     # 手动播放
-    # time.sleep(1)
-    time.sleep(1) # for windows
+    # time.sleep(1) # 等待加载出播放按钮
     # haohao 7.11 测试发现不加timesleep也是可以正常触发播放？还是加1s比较稳定
     # play_button = wait.until(EC.element_to_be_clickable((By.ID, "iconPlayPause")))
     # play_button.click()
     # print("Play button clicked.")
 
-    # 播放时间，设置为3min
-    # playtime = 1 * 60
     print("Play video for {} min.".format(playtime / 60))
     time.sleep(playtime)
 
@@ -59,51 +56,51 @@ driver = webdriver.Edge(options=options)
 # driver_path = '/Users/liuwenhao/Downloads/edgedriver_mac64_m1/msedgedriver'
 # driver = webdriver.Edge(service=webdriver.EdgeService(driver_path), options=options)
 
+# 打开视频播放器页面
 driver.get('http://localhost:3000/samples/dash-if-reference-player/index.html')
+wait = WebDriverWait(driver, 10)
 
 # for windows 消除个性化推荐弹窗
 # time.sleep(10)
 # driver.refresh()
 
+####################### 播放参数配置 #######################
+# 根据实际情况设置
+logs_folder_name = "0722_original_logs/videos1/"    # 输出logs文件夹
+pcaps_folder_name = "0722_pcaps/videos1"    # 输出pcaps文件夹
+server_ip = "123.56.11.94"  # 服务器IP
+bandwidth = '100kbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
+playtime = 3 * 60   # 播放时间
+# bandwidths = ['100kbit', '300kbit', '500kbit', '1mbit', '2mbit', '3mbit', '4mbit', '5mbit', 'xmbit']
+# 考虑是否可以控制远程服务器进行带宽动态切换，从而可以撰写嵌套循环实现多个带宽自动播放 TODO
+
 # 视频URL列表
 video_urls = [
-    'http://123.57.76.186/BV1JP411D76R.mpd',
-    'http://123.57.76.186/BV1Wf4y1n7Pc.mpd',
-    'http://123.57.76.186/BV1CM4m1k7bs.mpd',
-    'http://123.57.76.186/BV1tc411M7JF.mpd',
-    'http://123.57.76.186/BV1pn4y197hv.mpd',
-    'http://123.57.76.186/BV16b421e7L1.mpd',
-    'http://123.57.76.186/BV1UB4y1N7zB.mpd',
-    'http://123.57.76.186/BV1At421t7z4.mpd',
-    'http://123.57.76.186/BV1te4y1E7K5.mpd',
-    'http://123.57.76.186/BV1VG411B7RP.mpd'
+    # videos1
+    f'http://{server_ip}/BV1Mg411S7wi.mpd',
+    f'http://{server_ip}/BV1YT421v7Pi.mpd',
+    f'http://{server_ip}/BV1VG411B7RP.mpd',
+    f'http://{server_ip}/BV1pz421a7oC.mpd',
+    f'http://{server_ip}/BV16Y4y13724.mpd',
+    f'http://{server_ip}/BV1Mm421K7Ph.mpd',
+    f'http://{server_ip}/BV1uD421g7Qk.mpd',
+    f'http://{server_ip}/BV1MN41187U6.mpd',
+    f'http://{server_ip}/BV1Mr421p7W4.mpd',
+    f'http://{server_ip}/BV1kV4y1r7j5.mpd',
 ]
 
 # test
-video_urls = [
-    # 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd',
-    # 'https://dash.akamaized.net/digitalprimates/fraunhofer/480p_video/heaac_2_0_with_video/Sintel/sintel_480p_heaac2_0.mpd',
-    # 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd',
-    # 'http://39.102.209.114/BV1P44y1F72Z.mpd',
-    'http://123.56.126.80/BV1P44y1F72Z.mpd',
-    # 'http://123.56.126.80/BV1jE411k76o.mpd'
-]
+# video_urls = [
+#     # 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd',
+#     # 'https://dash.akamaized.net/digitalprimates/fraunhofer/480p_video/heaac_2_0_with_video/Sintel/sintel_480p_heaac2_0.mpd',
+#     f'http://{server_ip}/BV1P44y1F72Z.mpd',
+#     f'http://{server_ip}/BV1jE411k76o.mpd'
+# ]
 
-# bandwidths = ['100kbit', '300kbit', '500kbit', '1mbit', '2mbit', '3mbit', '4mbit', '5mbit', 'xmbit']
-# 其实在这里设置bandwidths没啥用，除非能通过这里控制远程服务器进行带宽切换 TODO
-
-wait = WebDriverWait(driver, 10)
 try:
-    # 下面三个变量需要根据实际情况设置
-    logs_folder_name = "0721_original_logs" # 输出logs文件夹
-    pcaps_folder_name = "0721_pcaps"    # 输出pcaps文件夹
-    playtime = 30  # 播放时间
-    bandwidth = '300kbit'  # 带宽
-
-    # 不存在则创建
+    # 检查输出文件夹
     if not os.path.exists(logs_folder_name):
         os.makedirs(logs_folder_name)
-
     if not os.path.exists(pcaps_folder_name):
         os.makedirs(pcaps_folder_name)
 
@@ -124,7 +121,7 @@ try:
             '-i', '以太网',  # 以太网接口名称或编号  
             # '-w', video_number + '.pcap',
             '-w', pcap_file_path,
-            '-f', 'host 123.56.126.80',
+            '-f', f'host {server_ip}',
             # '-a', 'duration:60'  # 捕获持续时间
         ]
         process = subprocess.Popen(tshark_command)

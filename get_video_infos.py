@@ -75,7 +75,7 @@ with open('video_zone_info_list.json', 'w', encoding='utf-8') as file:
     json.dump(info_list, file, indent=4, ensure_ascii=False)
     print("所有分区信息已以 JSON 格式写入文件")
 
-# tags
+# tags  haohao: 产生分区热门标签列表
 with open('video_zone_tags_list.json', 'w', encoding='utf-8') as file:
     json.dump(tags_list, file, indent=4, ensure_ascii=False)
     print("所有分区热门标签已以 JSON 格式写入文件")

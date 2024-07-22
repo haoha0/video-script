@@ -1,3 +1,9 @@
+# haohao: 过滤视频标签，提取热门标签的tag_name和tag_id
+# 输入：
+# video_zone_tags_list.json
+# 输出：
+# video_zone_tags_list_filtered.json
+
 import json
 
 tags_list = []

@@ -1,3 +1,9 @@
+# haohao: 产生视频列表的原始bvid文件
+# 输入：
+# video_zone_tags_list_filtered.json
+# 输出：
+# video_bvids.json
+
 from bilibili_api import search, sync
 import json
 import asyncio

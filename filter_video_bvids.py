@@ -1,3 +1,7 @@
+# haohao: 过滤去重，为tag_name添加id
+# 输入：video_bvids.json
+# 输出：video_bivids_filtered.json
+
 import json
 
 # 读取 JSON 文件
@@ -26,5 +30,5 @@ for item in bvid_list:
 with open('video_bivids_filtered.json', 'w', encoding='utf-8') as file:
     json.dump(filtered_bvid_list, file, indent=4, ensure_ascii=False)
 
-print("已将去重后的结果写入 'filtered_video_zone_tags_list.json'")
+print("已将去重后的结果写入 'video_bivids_filtered.json'")
 print("新list数据长度：", len(filtered_bvid_list))
