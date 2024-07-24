@@ -51,18 +51,14 @@ options.set_capability('ms:loggingPrefs', {'browser': 'ALL'})
 options.add_experimental_option("detach", True)
 options.add_argument('--ignore-certificate-errors') # for windows error
 options.add_experimental_option('excludeSwitches', ['enable-logging']) # for windows error
-driver = webdriver.Edge(options=options)
+
+# 打开视频播放器页面
 # TODO:使用指定路径的driver
 # driver_path = '/Users/liuwenhao/Downloads/edgedriver_mac64_m1/msedgedriver'
 # driver = webdriver.Edge(service=webdriver.EdgeService(driver_path), options=options)
-
-# 打开视频播放器页面
-driver.get('http://localhost:3000/samples/dash-if-reference-player/index.html')
-wait = WebDriverWait(driver, 10)
-
-# for windows 消除个性化推荐弹窗
-# time.sleep(10)
-# driver.refresh()
+# driver = webdriver.Edge(options=options)
+# driver.get('http://localhost:3000/samples/dash-if-reference-player/index.html')
+# wait = WebDriverWait(driver, 10)
 
 ####################### 播放参数配置 #######################
 # 根据实际情况设置
@@ -114,6 +110,11 @@ try:
         video_number = match.group(1)
         print("Video number: ", video_number)
 
+        # 打开浏览器
+        driver = webdriver.Edge(options=options)
+        driver.get('http://localhost:3000/samples/dash-if-reference-player/index.html')
+        wait = WebDriverWait(driver, 10)
+
         # 启动wireshark
         # pcap_file_name = "pcap_" + video_number + f"_{playtime}s.pcap"
         pcap_file_name = "pcap_" + video_number + f"_{bandwidth}_{playtime}s.pcap"
@@ -141,16 +142,20 @@ try:
         print("Wireshark terminated.")
         print("Pcaps saved to {}.".format(pcap_file_path))
 
-        # 7.21 实现多视频自动播放并记录logs
+        # 记录logs
         # filename = "log_" + video_number + f"_{playtime}s.txt"
         filename = "log_" + video_number + f"_{bandwidth}_{playtime}s.txt"
 
         save_logs_to_file(driver, logs_folder_name, filename)
         print("Video {} finished.\n".format(video_number))
 
-        # 刷新页面
-        print("Refreshing page...\n")
-        driver.refresh()
+        # # 刷新页面
+        # print("Refreshing page...\n")
+        # driver.refresh()
+        # time.sleep(2)
+
+        # 关闭浏览器
+        driver.quit()
         time.sleep(2)
 
     # folder_name = "original_logs"
@@ -162,4 +167,5 @@ except Exception as e:
     print("An error occurred:")
     traceback.print_exc()
 
-driver.quit()
+# driver.quit()
+print("All videos finished.")
