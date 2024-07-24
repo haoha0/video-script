@@ -66,25 +66,26 @@ wait = WebDriverWait(driver, 10)
 
 ####################### 播放参数配置 #######################
 # 根据实际情况设置
-logs_folder_name = "../../pcap_data/0724_ground_logs/videos1_2mbit/"    # 输出logs文件夹
-pcaps_folder_name = "../../pcap_data/0724_ground_pcaps/videos1_2mbit/"    # 输出pcaps文件夹
+# 7.23 1,2没有index
+logs_folder_name = "../../pcap_data/test_tshark/"    # 输出logs文件夹
+pcaps_folder_name = "../../pcap_data/test_tshark/"    # 输出pcaps文件夹
 server_ip = "47.93.17.68"  # 服务器IP
-bandwidth = '2mbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
-playtime = 3 * 60   # 播放时间
+bandwidth = 'xxx'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
+playtime = 6 * 60   # 播放时间
 # bandwidths = ['100kbit', '300kbit', '500kbit', '1mbit', '2mbit', '3mbit', '4mbit', '5mbit', 'xmbit']
 # 考虑是否可以控制远程服务器进行带宽动态切换，从而可以撰写嵌套循环实现多个带宽自动播放 TODO
 
 # 视频URL列表
 video_urls = [
     # videos1
-    f'http://{server_ip}/BV1zi421S7QJ.mpd',
-    f'http://{server_ip}/BV1Tx411W7eg.mpd',
-    f'http://{server_ip}/BV1pz421a7oC.mpd',
-    f'http://{server_ip}/BV14m421N7Q5.mpd',
-    f'http://{server_ip}/BV12A4y1o7Gg.mpd',
-    f'http://{server_ip}/BV1fT421v7m6.mpd',
-    f'http://{server_ip}/BV16Y4y13724.mpd',
-    f'http://{server_ip}/BV1Gx411y749.mpd',
+    # f'http://{server_ip}/BV1zi421S7QJ.mpd',
+    # f'http://{server_ip}/BV1Tx411W7eg.mpd',
+    # f'http://{server_ip}/BV1pz421a7oC.mpd',
+    # f'http://{server_ip}/BV14m421N7Q5.mpd',
+    # f'http://{server_ip}/BV12A4y1o7Gg.mpd',
+    # f'http://{server_ip}/BV1fT421v7m6.mpd',
+    # f'http://{server_ip}/BV16Y4y13724.mpd',
+    # f'http://{server_ip}/BV1Gx411y749.mpd',
     f'http://{server_ip}/BV1Xi4y187MR.mpd',
     f'http://{server_ip}/BV1P44y1F72Z.mpd',
 ]
@@ -107,7 +108,7 @@ try:
         print("Pcaps folder created.")
 
     # 顺序播放视频
-    pattern = r'\/(BV.*?)\.mpd'
+    pattern = r'\/(BV.*?)\.mpd' 
     for video in video_urls:
         # 获取video号
         match = re.search(pattern, video)
@@ -118,13 +119,13 @@ try:
         # pcap_file_name = "pcap_" + video_number + f"_{playtime}s.pcap"
         pcap_file_name = "pcap_" + video_number + f"_{bandwidth}_{playtime}s.pcap"
         pcap_file_path = os.path.join(pcaps_folder_name, pcap_file_name)
-        tshark_command = [
+        tshark_command = [  
             'E:/Wireshark/tshark.exe',  # E:\\Wireshark\\tshark.exe
-            '-i', '以太网',  # 以太网接口名称或编号
+            '-i', '以太网',  # 以太网接口名称或编号  
             # '-w', video_number + '.pcap',
             '-w', pcap_file_path,
             '-f', f'host {server_ip}',
-            '-a', f'duration:{playtime}'  # 捕获持续时间
+            # '-a', 'duration:60'  # 捕获持续时间
         ]
         print("Wireshark starting...")
         process = subprocess.Popen(tshark_command)
@@ -133,7 +134,7 @@ try:
 
         # 播放视频
         print("Playing video {}...".format(video_number))
-        load_and_play_video(driver, video, playtime, wait)
+        # load_and_play_video(driver, video, playtime, wait)
         print("Playback finished.\n")
 
         # 关闭wireshark
@@ -151,7 +152,7 @@ try:
         # 刷新页面
         print("Refreshing page...\n")
         driver.refresh()
-        time.sleep(2)
+        # time.sleep(5)
 
     # folder_name = "original_logs"
     # folder_name = "0721_original_logs"
