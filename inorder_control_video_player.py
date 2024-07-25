@@ -62,12 +62,13 @@ options.add_experimental_option('excludeSwitches', ['enable-logging']) # for win
 
 ####################### 播放参数配置 #######################
 # 根据实际情况设置
-logs_folder_name = "../../pcap_data/0724_ground_logs/videos1_2mbit/"    # 输出logs文件夹
-pcaps_folder_name = "../../pcap_data/0724_ground_pcaps/videos1_2mbit/"    # 输出pcaps文件夹
-server_ip = "47.93.17.68"  # 服务器IP
-bandwidth = '2mbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
+logs_folder_name = "../../pcap_data/0725_ground_logs/videos1_3mbit_new/"    # 输出logs文件夹
+pcaps_folder_name = "../../pcap_data/0725_ground_pcaps/videos1_3mbit_new/"    # 输出pcaps文件夹
+server_ip = "8.152.5.35"  # 服务器IP
+bandwidth = '3mbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
 playtime = 3 * 60   # 播放时间
 # bandwidths = ['100kbit', '300kbit', '500kbit', '1mbit', '2mbit', '3mbit', '4mbit', '5mbit', 'xmbit']
+# TODO
 # 考虑是否可以控制远程服务器进行带宽动态切换，从而可以撰写嵌套循环实现多个带宽自动播放 TODO
 
 # 视频URL列表
