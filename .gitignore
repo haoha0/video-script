@@ -6,3 +6,5 @@ filtered_logs/
 features/
 *_original_logs/
 *_pcaps/
+0724_ground_logs/
+test_logs/

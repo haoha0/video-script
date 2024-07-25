@@ -16,15 +16,10 @@ new_folder_name = "biterates"
 
 pattern = r'_\d{8}-\d{4}_(.*?)_filtered'
 match = re.search(pattern, filename)
+# pattern = r"log_(.*?)_filtered\.txt$"  
+# match = re.search(pattern, filename)  
 result = match.group(1)
 new_filename = f"{result}_biterates.txt"
-# if match:
-#     result = match.group(1)
-#     print("提取的部分:", result)
-# else:
-#     print("未找到匹配内容")
-# 输出结果：提取的部分: 300kbit
-# print("新文件名:", new_filename)
 
 new_filepath = os.path.join(new_folder_name, new_filename)
 # # 打开原始文件和新文件
