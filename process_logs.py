@@ -1,3 +1,12 @@
+# haohao: process original logs to get the filtered logs and generate bitrates and resolution index
+# Usage: python process_logs.py logs_dir
+# logs_dir: the dir path of the original logs
+# eg: python3 .\process_logs.py .\0724_ground_logs\
+# output:
+# 1. the filtered logs in the _filtered dir
+# 2. the bitrates in the _biterates dir
+# 3. the resolution index in the _index dir
+
 import sys
 import re
 import os

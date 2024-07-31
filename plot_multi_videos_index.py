@@ -1,5 +1,9 @@
-# liuwenhao 7.17
-# read index files and plot the percentage of different index under different bandwidths
+# haohao: 计算不同带宽下所有视频的分辨率指数的比例，并绘制堆叠柱状图
+# Usage: python plot_multi_videos_index.py logs_dir
+# logs_dir: the dir path of the original logs
+# eg: python3 .\plot_multi_videos_index.py .\0724_ground_logs\
+# output:
+# the percentage of different resolution quality index under different bandwidths figure
 
 import os
 import sys
