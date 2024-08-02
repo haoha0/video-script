@@ -2,6 +2,7 @@
 # Usage: python process_logs.py logs_dir
 # logs_dir: the dir path of the original logs
 # eg: python3 .\process_logs.py .\0724_ground_logs\
+# eg: python3 .\process_logs.py ..\..\pcap_data\0724_ground_logs_test\
 # output:
 # 1. the filtered logs in the _filtered dir
 # 2. the bitrates in the _biterates dir
@@ -88,7 +89,7 @@ logs_dir = sys.argv[1]
 
 for dirpath, dirnames, filenames in os.walk(logs_dir):
     # skip the logs dir, the filtered dir and the bitrates dir
-    if dirpath == logs_dir or dirpath.endswith("_filtered") or dirpath.endswith("_biterates") or dirpath.endswith("_index"):
+    if dirpath == logs_dir or dirpath.endswith("_filtered") or dirpath.endswith("_bitrates") or dirpath.endswith("_index"):
         continue
     print(f"current process dir: {dirpath}")
     dir_basename = os.path.basename(dirpath)
@@ -100,7 +101,7 @@ for dirpath, dirnames, filenames in os.walk(logs_dir):
         os.makedirs(filtered_dirpath)
     
     # create bitrates dir
-    bitrates_dirpath = os.path.join(logs_dir, dir_basename + "_biterates")
+    bitrates_dirpath = os.path.join(logs_dir, dir_basename + "_bitrates")
     print(f"target bitrates dir: {bitrates_dirpath}")
     if not os.path.exists(bitrates_dirpath):
         os.makedirs(bitrates_dirpath)
@@ -128,7 +129,7 @@ for dirpath, dirnames, filenames in os.walk(logs_dir):
             match = re.search(pattern, filtered_filename)  
             result = match.group(1)
             # bitrates
-            bitrates_filename = f"{result}_biterates.txt"
+            bitrates_filename = f"{result}_bitrates.txt"
             bitrates_filepath = os.path.join(bitrates_dirpath, bitrates_filename)
             # index
             index_filename = f"{result}_index.txt"
