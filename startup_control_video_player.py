@@ -64,11 +64,12 @@ options.add_experimental_option('excludeSwitches', ['enable-logging']) # for win
 # 根据实际情况设置
 # logs_folder_name = "../../pcap_data/0801_ground_logs/videos_100kbit/"    # 输出logs文件夹
 # pcaps_folder_name = "../../pcap_data/0801_ground_pcaps/videos_100kbit/"    # 输出pcaps文件夹
-logs_folder_name = "../../output_data/logs/0801_ground_logs/test_rebuffer_300kbit/"    # 输出logs文件夹
-pcaps_folder_name = "../../output_data/pcaps/0801_ground_pcaps/test_rebuffer_300kbit/"    # 输出pcaps文件夹
+logs_folder_name = "../../output_data/logs/0804_ground_logs/videos_xbit/"    # 输出logs文件夹
+pcaps_folder_name = "../../output_data/pcaps/0804_ground_pcaps/videos_xbit/"    # 输出pcaps文件夹
+# videos_500kbit
 
-server_ip = "8.152.4.118"  # 服务器IP
-bandwidth = '300kbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
+server_ip = "8.152.1.88"  # 服务器IP
+bandwidth = 'xbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
 playtime = 60   # 播放时间
 # bandwidths = ['100kbit', '300kbit', '500kbit', '1mbit', '2mbit', '3mbit', '4mbit', '5mbit', 'xmbit']
 # TODO
@@ -88,27 +89,60 @@ video_urls = [
     f'http://{server_ip}/BV1Xi4y187MR.mpd',
     f'http://{server_ip}/BV1P44y1F72Z.mpd',
 
-    # f'http://{server_ip}/BV1j7421o7wd.mpd',
-    # f'http://{server_ip}/BV1Br421w7Pz.mpd',
-    # f'http://{server_ip}/BV1eU4y1Y7Vz.mpd',
-    # f'http://{server_ip}/BV1ai421D7yu.mpd',
-    # f'http://{server_ip}/BV1ks411W7r5.mpd',
-    # f'http://{server_ip}/BV1Ss421g75Y.mpd',
-    # f'http://{server_ip}/BV1At421t7z4.mpd',
-    # f'http://{server_ip}/BV16W4y1E7ou.mpd',
-    # f'http://{server_ip}/BV1nF411Z7Lp.mpd',
-    # f'http://{server_ip}/BV1sm421W7Yw.mpd',
+    f'http://{server_ip}/BV1j7421o7wd.mpd',
+    f'http://{server_ip}/BV1Br421w7Pz.mpd',
+    f'http://{server_ip}/BV1eU4y1Y7Vz.mpd',
+    f'http://{server_ip}/BV1ai421D7yu.mpd',
+    f'http://{server_ip}/BV1ks411W7r5.mpd',
+    f'http://{server_ip}/BV1Ss421g75Y.mpd',
+    f'http://{server_ip}/BV1At421t7z4.mpd',
+    f'http://{server_ip}/BV16W4y1E7ou.mpd',
+    f'http://{server_ip}/BV1nF411Z7Lp.mpd',
+    f'http://{server_ip}/BV1sm421W7Yw.mpd',
 
-    # f'http://{server_ip}/BV1nm421K78H.mpd',
-    # f'http://{server_ip}/BV12w4m19781.mpd',
-    # f'http://{server_ip}/BV1xJ4m1g71P.mpd',
-    # f'http://{server_ip}/BV1fx41137RR.mpd',
-    # f'http://{server_ip}/BV1tX4y1q7nT.mpd',
-    # f'http://{server_ip}/BV1GT4y1e7VM.mpd',
-    # f'http://{server_ip}/BV1Cn4y1R7GB.mpd',
-    # f'http://{server_ip}/BV1bM411o7bx.mpd',
-    # f'http://{server_ip}/BV1Df4y1s7rG.mpd',
-    # f'http://{server_ip}/BV16b421e7L1.mpd',
+    f'http://{server_ip}/BV1nm421K78H.mpd',
+    f'http://{server_ip}/BV12w4m19781.mpd',
+    f'http://{server_ip}/BV1xJ4m1g71P.mpd',
+    f'http://{server_ip}/BV1fx41137RR.mpd',
+    f'http://{server_ip}/BV1tX4y1q7nT.mpd',
+    f'http://{server_ip}/BV1GT4y1e7VM.mpd',
+    f'http://{server_ip}/BV1Cn4y1R7GB.mpd',
+    f'http://{server_ip}/BV1bM411o7bx.mpd',
+    f'http://{server_ip}/BV1Df4y1s7rG.mpd',
+    f'http://{server_ip}/BV16b421e7L1.mpd',
+
+    f'http://{server_ip}/BV12k4y1X7XL.mpd',
+    f'http://{server_ip}/BV1EY411d77Z.mpd',
+    f'http://{server_ip}/BV1jJ4m1G73a.mpd',
+    f'http://{server_ip}/BV1Mr421p7W4.mpd',
+    f'http://{server_ip}/BV1tc411M7JF.mpd',
+    f'http://{server_ip}/BV17x4y177kS.mpd',
+    f'http://{server_ip}/BV1mW421A7nM.mpd',
+    f'http://{server_ip}/BV1qv4y1p7YN.mpd',
+    f'http://{server_ip}/BV1Wf4y1n7Pc.mpd',
+    f'http://{server_ip}/BV1Am421K7LM.mpd',
+
+    f'http://{server_ip}/BV1rj411J7sN.mpd',
+    f'http://{server_ip}/BV1Xw4m1Q7p2.mpd',
+    f'http://{server_ip}/BV1uD421g7Qk.mpd',
+    f'http://{server_ip}/BV1bT4y1871D.mpd',
+    f'http://{server_ip}/BV1Vm421T7zL.mpd',
+    f'http://{server_ip}/BV1a24y1j74Z.mpd',
+    f'http://{server_ip}/BV1EL4y187ZP.mpd',
+    f'http://{server_ip}/BV1ED421A7Ue.mpd',
+    f'http://{server_ip}/BV1Dr421u7fQ.mpd',
+    f'http://{server_ip}/BV1kV4y1r7j5.mpd',
+
+    f'http://{server_ip}/BV1oZ4y1X7tP.mpd',
+    f'http://{server_ip}/BV1jE411k76o.mpd',
+    f'http://{server_ip}/BV1ur421E7sn.mpd',
+    f'http://{server_ip}/BV1sR4y1e7SG.mpd',
+    f'http://{server_ip}/BV1jb421B7jP.mpd',
+    f'http://{server_ip}/BV1vi4y1N7f5.mpd',
+    f'http://{server_ip}/BV1Fu411o7o1.mpd',
+    f'http://{server_ip}/BV1mm421N7b1.mpd',
+    f'http://{server_ip}/BV1BV4y1T769.mpd',
+    f'http://{server_ip}/BV1Kt421M7Yz.mpd',
 ]
 
 # test

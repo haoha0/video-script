@@ -9,3 +9,4 @@ features/
 0724_ground_logs/
 test_logs/
 class_list/
+*.txt

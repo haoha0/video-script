@@ -2,7 +2,7 @@
 # Usage: python process_logs.py logs_dir
 # logs_dir: the dir path of the original logs
 # eg: python3 .\process_logs.py .\0724_ground_logs\
-# eg: python3 .\process_logs.py ..\..\pcap_data\0724_ground_logs_test\
+# eg: python3 .\process_logs_startup.py ..\..\output_data\logs\0804_ground_logs_test\
 # output:
 # 1. the filtered logs in the _filtered dir
 # 2. the bitrates in the _biterates dir
