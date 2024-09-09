@@ -62,10 +62,10 @@ options.add_experimental_option('excludeSwitches', ['enable-logging']) # for win
 
 ####################### 播放参数配置 #######################
 # 根据实际情况设置
-logs_folder_name = "../../pcap_data/0725_ground_logs/videos1_3mbit_new/"    # 输出logs文件夹
-pcaps_folder_name = "../../pcap_data/0725_ground_pcaps/videos1_3mbit_new/"    # 输出pcaps文件夹
-server_ip = "8.152.5.35"  # 服务器IP
-bandwidth = '3mbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
+logs_folder_name = "../../output_data/logs/0827_satellite_logs/videos_xmbit/"    # 输出logs文件夹
+pcaps_folder_name = "../../output_data/pcaps/0827_satellite_pcaps/videos_xmbit/"    # 输出pcaps文件夹
+server_ip = "8.152.161.6"  # 服务器IP
+bandwidth = 'xmbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
 playtime = 3 * 60   # 播放时间
 # bandwidths = ['100kbit', '300kbit', '500kbit', '1mbit', '2mbit', '3mbit', '4mbit', '5mbit', 'xmbit']
 # TODO
@@ -118,6 +118,7 @@ try:
 
         # 启动wireshark
         # pcap_file_name = "pcap_" + video_number + f"_{playtime}s.pcap"
+        offset_time = 3
         pcap_file_name = "pcap_" + video_number + f"_{bandwidth}_{playtime}s.pcap"
         pcap_file_path = os.path.join(pcaps_folder_name, pcap_file_name)
         tshark_command = [
@@ -126,11 +127,11 @@ try:
             # '-w', video_number + '.pcap',
             '-w', pcap_file_path,
             '-f', f'host {server_ip}',
-            '-a', f'duration:{playtime}'  # 捕获持续时间
+            '-a', f'duration:{playtime + offset_time}'  # 捕获持续时间
         ]
         print("Wireshark starting...")
         process = subprocess.Popen(tshark_command)
-        time.sleep(5)
+        time.sleep(offset_time)
         print("Wireshark started.\n")
 
         # 播放视频
