@@ -62,11 +62,15 @@ options.add_experimental_option('excludeSwitches', ['enable-logging']) # for win
 
 ####################### 播放参数配置 #######################
 # 根据实际情况设置
-logs_folder_name = "../../output_data/logs/0827_satellite_logs/videos_xmbit/"    # 输出logs文件夹
-pcaps_folder_name = "../../output_data/pcaps/0827_satellite_pcaps/videos_xmbit/"    # 输出pcaps文件夹
-server_ip = "8.152.161.6"  # 服务器IP
+# logs_folder_name = "../../output_data/plotinus_logs/1005_logs/videos_5mbit/"    # 输出logs文件夹
+# pcaps_folder_name = "../../output_data/plotinus_pcaps/1005_pcaps/videos_5mbit/"    # 输出pcaps文件夹
+logs_folder_name = "../../output_data/test/"    # 输出logs文件夹
+pcaps_folder_name = "../../output_data/test/"    # 输出pcaps文件夹
+# server_ip = "10.18.155.4"  # 服务器IP
+server_ip = "8.146.204.75"  # 服务器IP
 bandwidth = 'xmbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
-playtime = 3 * 60   # 播放时间
+# playtime = 3 * 60   # 播放时间
+playtime = 60   # 播放时间
 # bandwidths = ['100kbit', '300kbit', '500kbit', '1mbit', '2mbit', '3mbit', '4mbit', '5mbit', 'xmbit']
 # TODO
 # 考虑是否可以控制远程服务器进行带宽动态切换，从而可以撰写嵌套循环实现多个带宽自动播放 TODO
@@ -74,15 +78,15 @@ playtime = 3 * 60   # 播放时间
 # 视频URL列表
 video_urls = [
     # videos1
-    f'http://{server_ip}/BV1zi421S7QJ.mpd',
-    f'http://{server_ip}/BV1Tx411W7eg.mpd',
-    f'http://{server_ip}/BV1pz421a7oC.mpd',
-    f'http://{server_ip}/BV14m421N7Q5.mpd',
-    f'http://{server_ip}/BV12A4y1o7Gg.mpd',
-    f'http://{server_ip}/BV1fT421v7m6.mpd',
-    f'http://{server_ip}/BV16Y4y13724.mpd',
-    f'http://{server_ip}/BV1Gx411y749.mpd',
-    f'http://{server_ip}/BV1Xi4y187MR.mpd',
+    # f'http://{server_ip}/BV1zi421S7QJ.mpd',
+    # f'http://{server_ip}/BV1Tx411W7eg.mpd',
+    # f'http://{server_ip}/BV1pz421a7oC.mpd',
+    # f'http://{server_ip}/BV14m421N7Q5.mpd',
+    # f'http://{server_ip}/BV12A4y1o7Gg.mpd',
+    # f'http://{server_ip}/BV1fT421v7m6.mpd',
+    # f'http://{server_ip}/BV16Y4y13724.mpd',
+    # f'http://{server_ip}/BV1Gx411y749.mpd',
+    # f'http://{server_ip}/BV1Xi4y187MR.mpd',
     f'http://{server_ip}/BV1P44y1F72Z.mpd',
 ]
 
@@ -118,12 +122,13 @@ try:
 
         # 启动wireshark
         # pcap_file_name = "pcap_" + video_number + f"_{playtime}s.pcap"
-        offset_time = 3
+        offset_time = 10
         pcap_file_name = "pcap_" + video_number + f"_{bandwidth}_{playtime}s.pcap"
         pcap_file_path = os.path.join(pcaps_folder_name, pcap_file_name)
         tshark_command = [
             'E:/Wireshark/tshark.exe',  # E:\\Wireshark\\tshark.exe
-            '-i', '以太网',  # 以太网接口名称或编号
+            # '-i', '以太网',  # 以太网接口名称或编号
+            '-i', 'WLAN',
             # '-w', video_number + '.pcap',
             '-w', pcap_file_path,
             '-f', f'host {server_ip}',
@@ -157,8 +162,11 @@ try:
         # time.sleep(2)
 
         # 关闭浏览器
-        driver.quit()
-        time.sleep(2)
+        # driver.quit()
+        # time.sleep(2)
+        # 暂停等待输入
+        input("Press Enter to continue...")
+
 
     # folder_name = "original_logs"
     # folder_name = "0721_original_logs"

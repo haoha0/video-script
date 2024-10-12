@@ -3,6 +3,10 @@
 # logs_dir: the dir path of the original logs
 # eg: python3 .\process_logs.py .\0724_ground_logs\
 # eg: python3 .\process_logs.py ..\..\pcap_data\0724_ground_logs_test\
+#
+# 10.9 add: process new plotinus data
+# python3 .\process_logs.py ..\..\output_data\plotinus_logs\1005_logs_test\
+#
 # output:
 # 1. the filtered logs in the _filtered dir
 # 2. the bitrates in the _biterates dir

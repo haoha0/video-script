@@ -1,3 +1,5 @@
+# haohao: 原始控制视频播放脚本，弃用
+
 import traceback
 from selenium import webdriver
 from selenium.webdriver.common.by import By

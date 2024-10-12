@@ -14,6 +14,8 @@
 
 # usage: python3 class_by_bitrate.py logs_dir
 # eg: python3 class_by_bitrate.py ..\..\pcap_data\0724_ground_logs_test_bitrates
+
+# 10.9 python3 class_by_bitrate.py ..\..\output_data\plotinus_logs\1005_logs_test
 import os
 import sys
 import re
@@ -83,11 +85,11 @@ def class_bitrate(logs_dir):
                     print("basename: ", basename, " avg bitrate: ", avg_bitrate)
 
                     # 划分到对应的区间
-                    if avg_bitrate >= 0 and avg_bitrate < 500:
+                    if avg_bitrate >= 0 and avg_bitrate < 300:
                         LD_list.append((basename, avg_bitrate))
-                    elif avg_bitrate >= 500 and avg_bitrate < 1500:
+                    elif avg_bitrate >= 300 and avg_bitrate < 1000:
                         SD_list.append((basename, avg_bitrate))
-                    elif avg_bitrate >= 1500:
+                    elif avg_bitrate >= 1000:
                         HD_list.append((basename, avg_bitrate))
 
             print("")
@@ -113,12 +115,12 @@ if __name__ == "__main__":
     # print("HD_list: ", HD_list)
 
     # # write to file
-    with open('bitrate_LD_list.txt', 'w') as f:
+    with open('plotinus_static/new_bitrate/bitrate_LD_list.txt', 'w') as f:
         for item in LD_list:
             f.write(f"{item[0]} {item[1]}\n")
-    with open('bitrate_SD_list.txt', 'w') as f:
+    with open('plotinus_static/new_bitrate/bitrate_SD_list.txt', 'w') as f:
         for item in SD_list:
             f.write(f"{item[0]} {item[1]}\n")
-    with open('bitrate_HD_list.txt', 'w') as f:
+    with open('plotinus_static/new_bitrate/bitrate_HD_list.txt', 'w') as f:
         for item in HD_list:
             f.write(f"{item[0]} {item[1]}\n")

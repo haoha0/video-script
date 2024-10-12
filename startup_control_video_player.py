@@ -64,14 +64,14 @@ options.add_experimental_option('excludeSwitches', ['enable-logging']) # for win
 # 根据实际情况设置
 # logs_folder_name = "../../pcap_data/0801_ground_logs/videos_100kbit/"    # 输出logs文件夹
 # pcaps_folder_name = "../../pcap_data/0801_ground_pcaps/videos_100kbit/"    # 输出pcaps文件夹
-logs_folder_name = "../../output_data/logs/0804_ground_logs/videos_xbit/"    # 输出logs文件夹
-pcaps_folder_name = "../../output_data/pcaps/0804_ground_pcaps/videos_xbit/"    # 输出pcaps文件夹
+logs_folder_name = "../../output_data/plotinus_logs/1005_logs_startup/videos_100kbit/"    # 输出logs文件夹
+pcaps_folder_name = "../../output_data/plotinus_pcaps/1005_pcaps_startup/videos_100kbit/"    # 输出pcaps文件夹
 # videos_500kbit
 
-server_ip = "8.152.1.88"  # 服务器IP
-bandwidth = 'xbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
-playtime = 60   # 播放时间
-# bandwidths = ['100kbit', '300kbit', '500kbit', '1mbit', '2mbit', '3mbit', '4mbit', '5mbit', 'xmbit']
+server_ip = "10.18.155.4"  # 服务器IP
+bandwidth = '100kbit'   # 服务器设置的带宽限制（需要去服务器使用tc进行限制）
+playtime = 30   # 播放时间
+# bandwidths = ['100kbit', '200kbit', '300kbit', '400kbit', '500kbit', 'xbit']
 # TODO
 # 考虑是否可以控制远程服务器进行带宽动态切换，从而可以撰写嵌套循环实现多个带宽自动播放 TODO
 
@@ -133,16 +133,16 @@ video_urls = [
     f'http://{server_ip}/BV1Dr421u7fQ.mpd',
     f'http://{server_ip}/BV1kV4y1r7j5.mpd',
 
-    f'http://{server_ip}/BV1oZ4y1X7tP.mpd',
-    f'http://{server_ip}/BV1jE411k76o.mpd',
-    f'http://{server_ip}/BV1ur421E7sn.mpd',
-    f'http://{server_ip}/BV1sR4y1e7SG.mpd',
-    f'http://{server_ip}/BV1jb421B7jP.mpd',
-    f'http://{server_ip}/BV1vi4y1N7f5.mpd',
-    f'http://{server_ip}/BV1Fu411o7o1.mpd',
-    f'http://{server_ip}/BV1mm421N7b1.mpd',
-    f'http://{server_ip}/BV1BV4y1T769.mpd',
-    f'http://{server_ip}/BV1Kt421M7Yz.mpd',
+    # f'http://{server_ip}/BV1oZ4y1X7tP.mpd',
+    # f'http://{server_ip}/BV1jE411k76o.mpd',
+    # f'http://{server_ip}/BV1ur421E7sn.mpd',
+    # f'http://{server_ip}/BV1sR4y1e7SG.mpd',
+    # f'http://{server_ip}/BV1jb421B7jP.mpd',
+    # f'http://{server_ip}/BV1vi4y1N7f5.mpd',
+    # f'http://{server_ip}/BV1Fu411o7o1.mpd',
+    # f'http://{server_ip}/BV1mm421N7b1.mpd',
+    # f'http://{server_ip}/BV1BV4y1T769.mpd',
+    # f'http://{server_ip}/BV1Kt421M7Yz.mpd',
 ]
 
 # test

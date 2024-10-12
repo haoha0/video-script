@@ -1,12 +1,9 @@
-# haohao: process original logs to get the filtered logs and generate bitrates and resolution index
-# Usage: python process_logs.py logs_dir
-# logs_dir: the dir path of the original logs
-# eg: python3 .\process_logs.py .\0724_ground_logs\
-# eg: python3 .\process_logs_startup.py ..\..\output_data\logs\0804_ground_logs_test\
-# output:
-# 1. the filtered logs in the _filtered dir
-# 2. the bitrates in the _biterates dir
-# 3. the resolution index in the _index dir
+# haohao:
+# generate _startup.txt files from _filtered.txt files
+
+# eg.
+# 10.9: python3 process_logs_startup.py ..\..\output_data\plotinus_logs\1005_logs_startup_test
+
 
 import sys
 import re

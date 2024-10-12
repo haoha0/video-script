@@ -1,3 +1,5 @@
+# haohao: 原始的生成比特率文件的代码，弃用
+
 import sys
 import re
 import os

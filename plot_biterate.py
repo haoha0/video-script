@@ -1,7 +1,9 @@
-# liuwenhao 7.17
+# haohao:
 # read biterate files and plot the percentage of different biterate under different bandwidths
-
 # 读取特征文件，计算比特率的各种值所占比例和比特率的平均值
+
+# 10.9: 该脚本只能处理一个目录下（如files/features/）已有多种带宽下的不同比特率特征文件，弃用
+
 import os
 import pandas as pd
 import matplotlib.pyplot as plt

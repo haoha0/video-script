@@ -1,9 +1,11 @@
-# haohao: 计算不同带宽下所有视频的分辨率指数的比例，并绘制堆叠柱状图
+# haohao: 计算所有视频数据在不同带宽下的分辨率指数的比例，并绘制堆叠柱状图
 # Usage: python plot_multi_videos_index.py logs_dir
 # logs_dir: the dir path of the original logs
 # eg: python3 .\plot_multi_videos_index.py .\0724_ground_logs\
 # output:
 # the percentage of different resolution quality index under different bandwidths figure
+
+# 10.9: python3 .\plot_multi_videos_index.py ..\..\output_data\plotinus_logs\1005_logs_test\
 
 import os
 import sys
@@ -116,5 +118,7 @@ plt.xlabel('Resolution Quality Index')
 plt.ylabel('Percentage (%)')
 plt.title('Percentage of Different Resolution Quality Index under Different Bandwidths')
 plt.legend(title='Index')
-plt.savefig('test.pdf') # need to be modified
+
+plt.savefig('plotinus_1005.pdf') # need to be modified
+
 plt.show()

@@ -5,6 +5,8 @@
 # usage: python class_by_buffer.py logs_dir
 # eg: python3 .\class_by_buffer.py ..\..\output_data\logs\0801_ground_logs\
 
+# 10.9: python3 .\class_by_buffer.py ..\..\output_data\plotinus_logs\1005_logs_startup_test
+
 import os
 import sys
 
@@ -62,9 +64,9 @@ if __name__ == "__main__":
     print("Buffer_list: ", len(Started_list))
     print("Not_buffer_list: ", len(Not_started_list))
 
-    with open('Buffer.txt', 'w') as f:
+    with open('plotinus_static/new_rebuffer/buffer.txt', 'w') as f:
         for item in Started_list:
             f.write(f"{item[0]} {item[1]}\n")
-    with open('Not_buffer.txt', 'w') as f:
+    with open('plotinus_static/new_rebuffer/not_buffer.txt', 'w') as f:
         for item in Not_started_list:
             f.write(f"{item[0]} {item[1]}\n")

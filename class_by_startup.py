@@ -5,6 +5,8 @@
 # usage: python class_by_startup.py logs_dir
 # eg: python3 .\class_by_startup.py ..\..\output_data\logs\0801_ground_logs\
 
+# 10.9: python3 .\class_by_startup.py ..\..\output_data\plotinus_logs\1005_logs_startup_test
+
 import os
 import sys
 
@@ -75,7 +77,7 @@ def class_startup(logs_dir):
                     #     not_started_list.append((basename, startup_time))
 
                     # 二分类：
-                    if startup_time < 3:
+                    if startup_time < 10:
                         Started_list.append((basename, startup_time))
                     else:
                         Not_started_list.append((basename, startup_time))
@@ -119,9 +121,9 @@ if __name__ == "__main__":
     # print("Started_list: ", Started_list)
     # print("Not_started_list: ", Not_started_list)
 
-    with open('Started.txt', 'w') as f:
+    with open('plotinus_static/new_startup/started.txt', 'w') as f:
         for item in Started_list:
             f.write(f"{item[0]} {item[1]}\n")
-    with open('Not_started.txt', 'w') as f:
+    with open('plotinus_static/new_startup/not_started.txt', 'w') as f:
         for item in Not_started_list:
             f.write(f"{item[0]} {item[1]}\n")
